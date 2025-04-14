@@ -76,7 +76,7 @@ public:
 
         const int dataLen = sizeof(T);
         uint8_t txBuffer[dataLen];
-        memcpy(txBuffer, &payload, dataLen); // NOT &txBuffer
+        memcpy(txBuffer, &payload, dataLen);
 
         return TTNNode::send(txBuffer, dataLen, port);
     }

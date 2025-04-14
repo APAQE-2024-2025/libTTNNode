@@ -1,5 +1,5 @@
 /*
-*   By Mathias Vansteensel (4/2025)
+*   By Mathias Vansteensel (04/2025)
 *   using MCCI LMIC (v5.0.1)
 */
 
@@ -31,7 +31,7 @@ bool TTNNode::initInternal()
 {   
     bool success = (1 == os_init_ex((const void*)&lmic_pins));
     DBG_MSG("Setting up LoRa hardware & HAL");
-    DBG_MSG(USE_OTAA ? "Using ABP" : "Using OTAA");
+    DBG_MSG(USE_OTAA ? "Using OTAA" : "Using ABP");
     DBG_MSG(success ? "HAL hardware init success :)" : "ERROR: HAL hardware init failed, check pinmap and hardware connections (check board/logical pin numbering scheme)")
 
     if (!success)
@@ -69,7 +69,7 @@ void TTNNode::joinTTN()
     DBG_MSG("Attempting join with OTAA");
     LMIC_startJoining();
     Preferences p;
-    p.begin("lora", true); // we intentionally ignore failure here
+    p.begin("lora", true); // intentionally ignore failure here
     uint32_t netId = p.getUInt("netId", UINT32_MAX);
     uint32_t devAddr = p.getUInt("devAddr", UINT32_MAX);
     uint8_t nwkKey[16], artKey[16];
@@ -229,7 +229,6 @@ void TTNNode::update()
 // }
 
 
-//SEND PLACEHOLDER
 SendState TTNNode::send(uint8_t* data, int dataLen, uint8_t port)
 {
     if (packetQueued)
@@ -246,7 +245,7 @@ SendState TTNNode::send(uint8_t* data, int dataLen, uint8_t port)
         return SendState::OperationPending;
     }
 
-    LMIC_setTxData2(port, data, dataLen, /*confirmed ? 1 :*/ 0); //TODO: figure out wtf confirmed frames mean
+    LMIC_setTxData2(port, data, dataLen, /*confirmed ? 1 :*/ 0);
     packetQueued = true;
     TTNNode::invokeCallback(EV_QUEUED);
     fCount++;
