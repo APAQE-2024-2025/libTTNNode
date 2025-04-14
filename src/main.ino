@@ -1,4 +1,4 @@
-#include "TTNNode/TTNNode.h"
+#include "TTNNode.h"
 
 
 #define SEND_INTERVAL 10000
