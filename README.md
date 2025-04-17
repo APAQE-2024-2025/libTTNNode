@@ -8,11 +8,10 @@ A basic abstraction layer for ABP (and OTAA [WIP]) LoRaWAN communication with th
 * send any datatype/struct (whose size is known at compile-time) to the TTN
 
 # How to use
-1. Clone the repo
-2. Open a project in PlatformIO (arduino IDE may work, but you'll have to mess around with the platform.txt file)
-3. Place the downloaded TTNNode folder (the one containing TTNNode.cpp) in the **lib** folder of your platformIO project (or use it in another way i don't really care)
+1. Open a project in PlatformIO (arduino IDE may work, but you'll have to mess around with the platform.txt file)
+2. Clone the repo into the **lib** folder of the project
 4. Input your TTN keys and pin config into **Config.h**
-5. Modify the example in **main.ino** from (**Example.zip**) to do whatever you want.
+5. Use and modify the example in **main.ino** (from **Example.zip**) to do whatever you want.
 6. Profit 🥳🥳
 
 # Has this abomination been tested?
