@@ -9,10 +9,11 @@ A basic abstraction layer for ABP (and OTAA [WIP]) LoRaWAN communication with th
 
 # How to use
 1. Clone the repo
-2. Open the project in PlatformIO (arduino IDE may work, but you'll have to mess around with the platform.txt file)
-3. Input your TTN keys and pin config into **Config.h**
-4. Modify the example in **main.ino** to do whatever you want.
-5. Profit 🥳🥳
+2. Open a project in PlatformIO (arduino IDE may work, but you'll have to mess around with the platform.txt file)
+3. Place the downloaded TTNNode folder (the one containing TTNNode.cpp) in the **lib** folder of your platformIO project (or use it in another way i don't really care)
+4. Input your TTN keys and pin config into **Config.h**
+5. Modify the example in **main.ino** from (**Example.zip**) to do whatever you want.
+6. Profit 🥳🥳
 
 # Has this abomination been tested?
 ...</br>
