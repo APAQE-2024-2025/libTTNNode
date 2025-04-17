@@ -2,7 +2,6 @@
 
 #include <lmic.h>
 
-// #define LORAWAN_PORT 10              // Port the messages will be sent to
 #define LORAWAN_CONFIRMED_EVERY 0    // Send confirmed message every these many messages (0 means never)
 #define LORAWAN_SF DR_SF7            // Spreading factor (recommended DR_SF7 for ttn network map purposes, DR_SF10 works for slow moving trackers)
 #define LORAWAN_ADR 0                // Enable ADR

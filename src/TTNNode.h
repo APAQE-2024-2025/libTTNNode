@@ -34,8 +34,6 @@ private:
         .dio = {DIO0_GPIO, DIO1_GPIO, DIO2_GPIO},
     };
 
-    static inline std::vector<void (*)(uint8_t message)> lmic_callbacks;
-
     static inline bool packetSent = false;
     static inline bool packetQueued = false;
     static inline RTC_DATA_ATTR uint32_t fCount = 0;
@@ -45,6 +43,7 @@ private:
     static void joinTTN();
 
 public:
+    static inline std::vector<void (*)(uint8_t message)> lmic_callbacks;
 
     static bool begin();
 
@@ -82,6 +81,6 @@ public:
     }
 
 
-    static SendState send(uint8_t* data, int dataLen, uint8_t port);
+    static SendState send(uint8_t* data, size_t dataLen, uint8_t port);
 };
 #endif

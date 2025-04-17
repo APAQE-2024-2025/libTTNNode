@@ -229,7 +229,7 @@ void TTNNode::update()
 // }
 
 
-SendState TTNNode::send(uint8_t* data, int dataLen, uint8_t port)
+SendState TTNNode::send(uint8_t* data, size_t dataLen, uint8_t port)
 {
     if (packetQueued)
     {
